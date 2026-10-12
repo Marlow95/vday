@@ -23,8 +23,8 @@ https://www.dafont.com/lovely-valentine.font
 /* Existing styles */
 @font-face {
     font-family: 'LovelyValentine';
-    src: url('lovely_valentine/Lovely Valentine.otf') format('opentype'),
-         url('lovely_valentine/Lovely Valentine.ttf') format('truetype');
+    src: url('../lovely_valentine/Lovely Valentine.otf') format('opentype'),
+         url('../lovely_valentine/Lovely Valentine.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
