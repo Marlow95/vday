@@ -1,0 +1,190 @@
+/*
+
+CSS HSL
+
+--misty-rose: hsla(344, 100%, 95%, 1);
+
+--pink: hsla(345, 100%, 88%, 1);
+
+--cherry-blossom-pink: hsla(345, 100%, 85%, 1);
+
+--bakermiller-pink: hsla(345, 100%, 78%, 1);
+
+--rose-pompadour: hsla(345, 95%, 71%, 1);
+
+
+https://www.dafont.com/lovely-valentine.font
+
+
+*/
+/* Add the Google Fonts link for Montserrat in the head section */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Existing styles */
+@font-face {
+    font-family: 'LovelyValentine';
+    src: url('lovely_valentine/Lovely Valentine.otf') format('opentype'),
+         url('lovely_valentine/Lovely Valentine.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --misty-rose: hsla(344, 100%, 95%, 1);
+    --pink: hsla(345, 100%, 88%, 1);
+    --cherry-blossom-pink: hsla(345, 100%, 85%, 1);
+    --bakermiller-pink: hsla(345, 100%, 78%, 1);
+    --rose-pompadour: hsla(345, 95%, 71%, 1);
+}
+
+body {
+	
+    background-color: var(--misty-rose);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0em;
+    height: 100vh;
+}
+
+#container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'LovelyValentine', Arial, sans-serif;
+    font-weight: 500;
+    flex-direction: column;
+    margin: 2em auto;
+    height: 5rem;
+}
+
+.card {
+    position: relative;
+    text-align: center;
+    background: #fcf7f7;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 3;
+}
+
+.heart-container {
+    position: relative;
+    width: 30rem;
+    height: 30rem;
+    margin: 0 auto 4em;
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE10+/Edge */
+    user-select: none;         /* Non-prefixed version, currently supported by Chrome and Opera */
+    outline: none;
+}
+
+.heart {
+    --c: var(--rose-pompadour);
+    width: 250px;
+    aspect-ratio: 1;
+    background:
+        radial-gradient(circle at 60% 65%, var(--c) 64%, #0000 65%) top left/50% 50%,
+        radial-gradient(circle at 40% 65%, var(--c) 64%, #0000 65%) top right/50% 50%,
+        conic-gradient(from -45deg at 50% 85.5%, var(--c) 90deg, #0000 0) bottom/100% 50%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.message {
+    font-size: 2.9vh; /* Increased font size */
+    color: var(--bakermiller-pink);
+}
+
+.message.montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.message.left-align {
+    text-align: left;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--cherry-blossom-pink);
+    opacity: 0;
+    top: 0;
+    left: 50%;
+}
+
+#nextButton {
+    margin-top: 20px;
+    padding: 30px 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--bakermiller-pink);
+    color: white;
+    font-size: 1em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#nextButton:hover {
+    background-color: var(--rose-pompadour);
+}
+
+#backButton {
+    margin-top: 20px;
+    padding: 30px 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--bakermiller-pink);
+    color: white;
+    font-size: 1em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#backButton:hover {
+    background-color: var(--rose-pompadour);
+}
+
+/* Media Query for mobile devices */
+@media (max-width: 768px) {
+    .heart-container {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .heart {
+        width: 150px;
+    }
+
+    .message {
+        font-size: clamp(1rem, 8vw - 2rem, 3rem); /* Adjust font size based on viewport width for better mobile experience */
+        padding: 3em; /* Adjust padding for mobile */
+        text-align: center;
+        word-wrap: break-word; /* Allow long words to wrap */
+        max-width: 100%; /* Prevent overflow */
+
+    }
+
+}
